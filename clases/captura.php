@@ -14,16 +14,23 @@ echo '</pre>;'*/
 
 if(is_array($datos)){
     
+    $idCliente = $_SESSION['user_cliente'];
+    $sql = $con->prepare("SELECT email FROM clientes WHERE id=? AND estatus=1");
+    $sql->execute([$idCliente]);
+    $row_cliente = $sql->fetch(PDO::FETCH_ASSOC);
+
     $id_transacción = $datos['detalles']['id'];
     $monto = $datos['detalles']['purchase_units'][0]['amount']['value'];
     $status = $datos['detalles']['status'];
     $fecha = $datos['detalles']['update_time'];
     $fecha_nueva = date('Y-m-d H:i:s', strtotime($fecha));
-    $email = $datos['detalles']['payer']['email_address'];
-    $id_cliente = $datos['detalles']['payer']['payer_id'];
+    //$email = $datos['detalles']['payer']['email_address'];
+    $email = $row_cliente['email'];
+    //$id_cliente = $datos['detalles']['payer']['payer_id'];
+    
 
     $sql = $con->prepare("INSERT INTO compra (id_transacción, fecha, status, email, id_cliente, total) VALUES(?,?,?,?,?,?)");
-    $sql->execute([$id_transacción, $fecha_nueva, $status, $email, $id_cliente, $total]);
+    $sql->execute([$id_transacción, $fecha_nueva, $status, $email, $idCliente, $total]);
     $id = $con->lastInsertId();
 
     if($id > 0){
@@ -45,7 +52,14 @@ if(is_array($datos)){
                 $sql_insert->execute([$id, $clave, $row_prod['nombre'], $precio_desc, $cantidad]);
                  
             }
-            include 'enviar_email.php';
+            include 'mailer.php';
+
+            $asunto = "Detalles de la compra";
+            $cuerpo = '<h4>Gracias por su compra</h4>';
+            $cuerpo .= '<p>El ID de su compra es<b>'. $id_transacción . '</b></p>';
+
+            $mailer = new Mailer();
+            $mailer->enviarEmail($email, $asunto, $cuerpo);
         }
         unset($_SESSION['carrito']);
     }

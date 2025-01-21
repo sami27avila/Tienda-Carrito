@@ -7,8 +7,6 @@ $con = $db->conectar();
 
 $productos = isset($_SESSION['carrito']['productos']) ? $_SESSION['carrito']['productos'] : null;
 
-print_r($_SESSION);
-
 $lista_carrito = array();
 
 if($productos != null){
@@ -36,29 +34,9 @@ if($productos != null){
     <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
-<header>
-  <div class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a href="#" class="navbar-title">
-        <strong>Oddisey WEB</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarHeader">
-         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-list">
-            <a href="#" class="nav-link active">Catalogo</a>
-         </li> 
-          <li class="nav-list">
-           <a href="#" class="nav-link">Contactos</a>
-         </li> 
-         </ul>
-         <a href="carrito.php" class="btn btn-primary">Carrito<span id="num_cart" class="badge bg-secondary"><?php echo $num_cart; ?></span></a>
-      </div>
-    </div>
-  </div>
-</header>
+
+<?php include 'menu.php'; ?>
+
 <main id="main-page">
   <div class="container">
         <div class="row">
