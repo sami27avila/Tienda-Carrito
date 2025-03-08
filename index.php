@@ -29,6 +29,16 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 <main id="main-page">
     <div class="container">
+      <div class="product-order">
+          <strong class="text-order">6 Productos encontrados</strong>
+          Ordernar por: <select name="" id="">
+              <option value="">Precio más altos</option>
+              <option value="">Precio más bajos</option>
+              <option value="">Nombre A-Z</option>
+              <option value="">Nombre Z-A</option>
+          </select>
+      </div>
+      </div>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
          <?php foreach($resultado as $row) { ?>
          <div class="col">
@@ -42,7 +52,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                     $imagen = "images/no-photo.jpg";
                  }
                  ?>
-                 <img src="<?php echo $imagen; ?>" alt="Imagen de producto">
+                 <img src="<?php echo $imagen; ?>" alt="Imagen de producto" width="350px" height="240px">
                  <div class="card-body">
                      <h5 class="card-title"><?php echo $row['nombre']; ?></h5>
                      <p class="card-text">$ <?php echo number_format($row['precio'], 2, '.', ','); ?></p>
@@ -59,6 +69,9 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
       </div>
   </div>       
 </main>
+
+<?php include 'footer.php'; ?>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 <script>

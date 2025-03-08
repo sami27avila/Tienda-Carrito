@@ -75,11 +75,11 @@ if($id == '' || $token == ''){
          <div id="carouselImagenes" class="carousel slide">
              <div class="carousel-inner">
                  <div class="carousel-item active">
-                      <img src="<?php echo $rutaImg; ?>"  class="d-block w-100">
+                      <img src="<?php echo $rutaImg; ?>"  class="d-block w-100" width="350px" height="540px">
                  </div>
                  <?php foreach($imagenes as $img) { ?>
                  <div class="carousel-item">
-                      <img src="<?php echo $img; ?>"  class="d-block w-100">
+                      <img src="<?php echo $img; ?>"  class="d-block w-100" width="350px" height="540px">
                      
                  </div>
                  <?php } ?>
@@ -93,7 +93,6 @@ if($id == '' || $token == ''){
                  <span class="visually-hidden">Next</span>
              </button>
          </div>
-         <img src="images/productos/1/principal.jpg">
          </div>
          <div class="col-md-6 order-md-2">
              <h2><?php echo $nombre; ?></h2>
@@ -121,6 +120,9 @@ if($id == '' || $token == ''){
      </div>
   </div>       
 </main>
+
+<?php include 'footer.php'; ?>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script>
     function addProducto(id, cantidad, token){

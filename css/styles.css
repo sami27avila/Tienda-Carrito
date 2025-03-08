@@ -10,3 +10,32 @@ main > .container{
 .form-login {
     max-width: 350px;
 }
+
+.app-footer{
+    background-color: #67d6d6;
+    height: 100px;
+    padding-top: 30px;
+    padding-left: 40px;
+    margin-top: 560px;
+}
+
+p, strong{
+    color: white;
+    font-size: 19px;
+}
+
+.text-decoration-none{
+    color: white;
+}
+
+a:hover{
+    color: red;
+}
+
+.card-text{
+    color: black;
+}
+
+.text-order{
+    color: black;
+}
