@@ -10,7 +10,7 @@
       <div class="collapse navbar-collapse" id="navbarHeader">
          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-list">
-            <a href="#" class="nav-link active">Catalogo</a>
+            <a href="index.php" class="nav-link active">Catalogo</a>
          </li> 
           <li class="nav-list">
            <a href="#" class="nav-link">Contactos</a>
