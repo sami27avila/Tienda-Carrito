@@ -31,12 +31,12 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
     <div class="container">
       <div class="product-order">
           <strong class="text-order">6 Productos encontrados</strong>
-          Ordernar por: <select name="" id="">
+          <b>Ordernar por:<select name="" id="">
               <option value="">Precio más altos</option>
               <option value="">Precio más bajos</option>
               <option value="">Nombre A-Z</option>
               <option value="">Nombre Z-A</option>
-          </select>
+          </select></b>
       </div>
       </div>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -73,6 +73,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 <?php include 'footer.php'; ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/b400879b64.js" crossorigin="anonymous"></script>
 
 <script>
     function addProducto(id, token){

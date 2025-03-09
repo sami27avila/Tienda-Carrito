@@ -39,3 +39,31 @@ a:hover{
 .text-order{
     color: black;
 }
+
+.product-order{
+   display: flex;
+   border-bottom: solid 3px black;
+   padding: 22px;
+}
+
+b{
+    padding-left: 70vh;
+}
+
+
+.search{
+    padding: 4px;
+    border-radius: 5px 0 0 5px;
+    border: 0;
+    outline: none;
+    
+}
+
+.btn-search{
+    background-color: crimson;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+    color: #ffff;
+    cursor: pointer;
+   
+}

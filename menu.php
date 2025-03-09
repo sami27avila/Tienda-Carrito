@@ -16,6 +16,10 @@
            <a href="#" class="nav-link">Contactos</a>
          </li> 
          </ul>
+         <div class="search bar">
+            <input class="search" type="text" placeholder="Buscar...">
+            <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+         </div>
          <a href="mostrar.php" class="btn btn-primary btn-sm me-2">Carrito<span id="num_cart" class="badge bg-secondary"><?php echo $num_cart; ?></span></a>
          <?php if(isset($_SESSION['user_id'])){ ?>
             <div class="dropdown">
